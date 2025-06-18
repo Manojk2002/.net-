@@ -1,0 +1,114 @@
+--> MANOJ K
+   (1806659)
+
+
+Solution 1 : 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Input 1st number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input 2nd number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        if (num1 == num2)
+            Console.WriteLine($"{num1} and {num2} are equal.");
+        else
+            Console.WriteLine($"{num1} and {num2} are not equal.");
+    }
+}
+
+Solution 2:
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Input a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        if (num >= 0)
+            Console.WriteLine($"{num} is a positive number.");
+        else
+            Console.WriteLine($"{num} is a negative number.");
+    }
+}
+
+Solution 3:
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Input first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input operation (+, -, *, /): ");
+        char operation = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Input second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        int result = operation switch
+        {
+            '+' => num1 + num2,
+            '-' => num1 - num2,
+            '*' => num1 * num2,
+            '/' => num2 != 0 ? num1 / num2 : throw new DivideByZeroException("Cannot divide by zero"),
+            _ => throw new InvalidOperationException("Invalid operation")
+        };
+
+        Console.WriteLine($"{num1} {operation} {num2} = {result}");
+    }
+}
+
+Solution 4:
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i <= 10; i++)
+        {
+            Console.WriteLine($"{num} * {i} = {num * i}");
+        }
+    }
+}
+
+Solution 5:
+
+using System;
+
+class Program
+{
+    static int SumTriple(int a, int b)
+    {
+        return a == b ? (a + b) * 3 : a + b;
+    }
+
+    static void Main()
+    {
+        Console.Write("Input first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"Result: {SumTriple(num1, num2)}");
+    }
+}
+
